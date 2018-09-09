@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<style>
+html,body{
+	font-family: 'Slabo 27px', serif;
+	background: url("1.jpg");
+/*	background-color: #52007a;*/
+	width:100%;
+	height:100%;
+	margin:0;
+	overflow: hidden;
+}
+/*img{
+	width:30vw;
+	height:45vh;
+	margin-top:16%;
+}*/
+#dot1{
+    left: 32.3%;
+    top: 50%;
+    position:absolute;
+ 	height:20px;
+ 	width: 20px;
+ 	background-color: #83DCB7;
+ 	border-radius: 50%;
+ 	object-fit: contain;
+}
+#dot2{
+    left: 33.3%;
+    top: 56.5%;
+    position:absolute;
+ 	height:20px;
+ 	width: 20px;
+ 	background-color: #83DCB7;
+ 	border-radius: 50%;
+ 	object-fit: contain;
+}
+#dot3{
+    left: 35.5%;
+    top: 62.5%;
+    position:absolute;
+ 	height:20px;
+ 	width: 20px;
+ 	background-color: #83DCB7;
+ 	border-radius: 50%;
+ 	object-fit: contain;
+}
+#dot4{
+    left: 39%;
+    top: 67%;
+    position:absolute;
+ 	height:20px;
+ 	width: 20px;
+ 	background-color: #83DCB7;
+ 	border-radius: 50%;
+ 	object-fit: contain;
+}
+.center{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width:30vw;
+	height:45vh;
+	margin-top:16%;
+}
+#p1{
+	display: none;
+	margin-bottom: 10%;
+	position: absolute;
+	width:28%;
+	height: 14%;
+}
+#p2{
+	display: none;
+	margin-top: -30%;
+	margin-left: 5%;
+	position: absolute;
+	width:25%;
+	height: 12.5%;
+}
+#p3{
+	display: none;
+	margin-bottom: 10%;
+	margin-left:69%;
+	position: absolute;
+	width:24%;
+	height: 12%;
+}
+#p4{
+	display: none;
+	margin-top:-40%;
+	margin-left:65%;
+	position: absolute;
+	width:30%;
+	height: 15%;
+}
+</style>
+<body>
+<img src="moon1.png" class="center">
+<img src="dot.png" id="dot1">
+<img src="dot.png" id="dot2">
+<img src="dot.png" id="dot3">
+<img src="dot.png" id="dot4">
+<img src="p1.jpg" id="p1">
+<img src="p2.jpg" id="p2">
+<img src="p3.jpg" id="p3">
+<img src="p4.jpg" id="p4">
+
+<script>
+var project1 = document.getElementById("p1");
+var project2 = document.getElementById("p2");
+var project3 = document.getElementById("p3");
+var project4 = document.getElementById("p4");
+
+var dot1 = document.getElementById("dot1");
+var dot2 = document.getElementById("dot2");
+var dot3 = document.getElementById("dot3");
+var dot4 = document.getElementById("dot4");
+
+
+dot1.addEventListener("click", show);
+dot2.addEventListener("click", show2);
+dot3.addEventListener("click", show3);
+dot4.addEventListener("click", show4);
+
+var Pro1 = false;
+
+function show(){
+
+	if (Pro1 == false){
+		project1.style.display = "block";
+		Pro1 = true;
+	} else if (Pro1 ==true){
+		project1.style.display = "none";
+		Pro1 = false;
+	}
+}
+var Pro2 = false;
+
+function show2(){
+	if (Pro2 == false){
+		project2.style.display = "block";
+		Pro2 = true;
+	} else if (Pro2 ==true){
+		project2.style.display = "none";
+		Pro2 = false;
+	}
+}
+var Pro3 = false;
+
+function show3(){
+	if (Pro3 == false){
+		project3.style.display = "block";
+		Pro3 = true;
+	} else if (Pro3 ==true){
+		project3.style.display = "none";
+		Pro3 = false;
+	}
+}
+var Pro4 = false;
+
+function show4(){
+	if (Pro4 == false){
+		project4.style.display = "block";
+		Pro4 = true;
+	} else if (Pro4 ==true){
+		project4.style.display = "none";
+		Pro4 = false;
+	}
+}
+</script>
+</body>
+</html>
