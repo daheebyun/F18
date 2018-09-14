@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<style type="text/css">
+	html{
+		background-color: red;
+	}
+	.newheader{
+		color: purple;
+		font-weight: 300; 
+		font-family: monospace;
+	}
+</style>
+</head>
+<body>
+	<div id="wrapper"></div>
+<script>
+	var element = document.createElement("h1");
+	element.className = "newheader";
+
+	//var textNode = document.createTextNode("some text");
+	//element.appendChild(textNode);
+
+	//element.innerHTML = "sometext"
+
+	var myVar = "Hi";
+	var mySecondVar = "Hey";
+
+	element.innerHTML = `
+
+		<h1>${myVar} </h1>
+		<h2>${mySecondVar + " " + myVar} </h2> 
+
+		`
+
+
+
+	document.getElementById("wrapper").appendChild(element)
+	console.log(element);
+</script>
+</body>
+</html>
