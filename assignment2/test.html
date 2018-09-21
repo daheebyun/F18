@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<style type="text/css">
+ 	html, body, div{
+ 		margin: 0;
+ 		padding: 0;
+ 		background-color: red;
+ 		width: 100%;
+ 		height: 100%;
+ 	}
+ 	[class*="container"]{
+
+		position: relative;
+		display: inline-block;
+		width: 2vw;
+		height: 2vw;
+		padding: 0;
+		margin: 0;
+		border: 0;
+
+	}
+	.container425, .container737, .container1049, .container1361, .container383 ,.container695, .container1007, .container1319, .container497, .container809, .container1121, .container1433, .container455, .container767, .container1079, .container1391, .container413, .container725, .container1037, .container1349, .container365, .container677, .container989, .container1301{
+	animation: colorchange 10s infinite;}
+	@keyframes colorchange
+    {
+      	0%   {background: black;}
+      	25%  {background: purple;}
+		50%  {background: yellow;}
+      	75%  {background: green;}
+      	100% {background: black;}
+    }
+	.container263, .container731, .container1199, .container479, .container947, .container1415, .container281, .container905, .container1529, .container707, .container1331, .container197, .container665, .container1133, .container311, .container935, .container1559 {
+		-webkit-animation: rotation 2s infinite;}
+
+	@-webkit-keyframes rotation {
+		from {-webkit-transform: rotate(0deg);}
+		to {-webkit-transform: rotate(359deg);}
+	}
+	#wrapper{
+		width:100%;
+	}
+	.container22, .container23, .container24, .container25, .container26, .container27, .container28, .container29, .container30,.container74, .container75, .container76, .container77, .container78, .container79, .container80, .container81, .container82 {
+		background-color: #489C3C;
+	}
+	.container70, .container71, .container72, .container73, .container83, .container84, .container85, .container86, .container122, .container123, .container124, .container125, .container126, .container127, .container128, .container129, .container130, .container131, .container132, .container133, .container134, .container135, .container136, .container137, .container138{
+		background-color: #5bc72a;
+	}
+	.container6, .container17, .container28, .container39{
+		background-color: red;
+	}
+</style>
+</head>
+
+<body>
+	<div id="wrapper"></div>
+	
+
+
+<script>
+var circleDiameter = 1.9;
+var totalLength = 1560; 
+var color = "";
+
+for(var i = 0; i < totalLength; i++){
+	var container = document.createElement("div");
+	container.className = "container" + i;
+
+// document.getElementById("wrapper").appendChild(container)
+
+	if(i <= 155){
+		color = "";
+	}
+	if (i % 6 == 5){
+		color = "black";
+	}
+	else if(i > 155){
+		color = "red";
+	}
+
+// var color = "";
+
+// for(var i = 100; i < seedLength; i++){
+// 	var container = document.createElement("container");
+// 	container.className = "container";
+
+
+// 	if( i % 1389 == 0){
+// 		color = "#000000";
+// 	}else{
+// 		color = "#ff00ff";
+// 	}
+
+width = circleDiameter + "vw";
+height = circleDiameter + "vw";
+
+container.style.backgroundColor = color;
+container.style.width = width;
+container.style.height = height;
+
+
+
+// `
+
+// 				<div style="width:${circleDiameter}vw; height:${circleDiameter}vw;" background-color:${color}; class="box"></div>
+
+// 			`
+document.getElementById("wrapper").appendChild(container);
+}
+
+</script>
+</body>
+</html>

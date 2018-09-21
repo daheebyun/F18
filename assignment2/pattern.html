@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<style type="text/css">
+ 	html, body, div{
+ 		margin: 0;
+ 		padding: 0;
+ 		background-color: red;
+ 		width: 100%;
+ 		height: 100%;
+ 	}
+ 	[class*="container"]{
+
+		position: relative;
+		display: inline-block;
+		width: 2vw;
+		height: 2vw;
+		padding: 0;
+		margin: 0;
+		border: 0;
+
+	}
+	#wrapper{
+		width:100%;
+	}
+	.container20, .container21, .container22, .container23, .container24, .container25, .container26, .container27, .container28,.container70, .container71, .container72, .container73, .container74, .container75, .container76, .container77, .container78 {
+		background-color: #489C3C;
+	}
+	.container66, .container67, .container68, .container69, .container79, .container80, .container81, .container82, .container116, .container117, .container118, .container119, .container120, .container121, .container122, .container123, .container124, .container125, .container126, .container127, .container128, .container129, .container130, .container131, .container132{
+		background-color: #5bc72a;
+	}
+	.box{
+		position: absolute;
+		display: inline-block;
+		background-color: black;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+</style>
+</head>
+
+<body>
+	<img src="dot.png" id="dot1">
+	<div id="wrapper"></div>
+
+
+<script>
+var circleDiameter = 1.9;
+var totalLength = 150; 
+var seedLength = 7200;
+var black = "rgb(0, 0, 0)";
+
+for(var i = 0; i < totalLength; i++){
+	var container = document.createElement("div");
+	container.className = "container" + i;
+
+document.getElementById("wrapper").appendChild(container)
+}
+
+for(var i = 100; i < seedLength; i++){
+	var container = document.createElement("container");
+	container.className = "container";
+
+
+if( i % 21.20 == 0){
+	circleDiameter = black;
+}
+// if(i % 2733 == 100){
+// circleDiameter = 0;
+// }
+
+container.innerHTML = `
+
+				<div style="width:${circleDiameter}vw; height:${circleDiameter}vw;" class="box"></div>
+
+			`
+document.getElementById("wrapper").appendChild(container);
+}
+</script>
+</body>
+</html>
