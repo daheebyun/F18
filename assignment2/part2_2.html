@@ -9,6 +9,8 @@
  		background-color: red;
  		width: 100%;
  		height: 100%;
+ 		font-size: 15px;
+		text-align: center;
  	}
  	[class*="container"]{
 
@@ -30,28 +32,23 @@
 	.container66, .container67, .container68, .container69, .container79, .container80, .container81, .container82, .container116, .container117, .container118, .container119, .container120, .container121, .container122, .container123, .container124, .container125, .container126, .container127, .container128, .container129, .container130, .container131, .container132{
 		background-color: #5bc72a;
 	}
-	.box{
-		position: absolute;
-		display: inline-block;
-		background-color: black;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
+	#row{
+		background-color: 
 	}
-
 </style>
 </head>
 
 <body>
-	<img src="dot.png" id="dot1">
 	<div id="wrapper"></div>
+	<div id="row"></div>
 
 
 <script>
-var circleDiameter = 1.9;
+var circleDiameter = 1.5;
 var totalLength = 150; 
 var seedLength = 7200;
-var black = "rgb(0, 0, 0)";
+var interval = 0, 
+	counter = 0;
 
 for(var i = 0; i < totalLength; i++){
 	var container = document.createElement("div");
@@ -60,25 +57,41 @@ for(var i = 0; i < totalLength; i++){
 document.getElementById("wrapper").appendChild(container)
 }
 
-for(var i = 100; i < seedLength; i++){
+//to control scale wrap each line in a for loop, and decide how many squares each line has
+//div 대신에 row
+
+for(var j = 300; j < seedLength; j++){
 	var container = document.createElement("container");
 	container.className = "container";
 
 
-if( i % 21.20 == 0){
-	circleDiameter = black;
+	var bColor = "black"; // define the base color
+
+
+	// to choose randomly, generate random number and then use if statement to decide when to update the color
+	var randomNum = Math.random();
+
+	if(randomNum > 0.9){
+		bColor = "yellow";
+	}
+
+	// if you want to select methodically (i.e. every 4 or 5 or 10), use the modulus (%) to iterate based off of i
+	// if( i % 5 == 0){
+	// 	bColor = "yellow";
+	// }
+	// if(i % 2733 == 100){
+	// circleDiameter = 0;
+	// }
+
+	container.innerHTML = `
+
+					<div style="background-color:${bColor}; width:${circleDiameter}vw; height:${circleDiameter}vw;" class="box"></div>
+
+				`
+	document.getElementById("wrapper").appendChild(container);
 }
-// if(i % 2733 == 100){
-// circleDiameter = 0;
-// }
 
-container.innerHTML = `
 
-				<div style="width:${circleDiameter}vw; height:${circleDiameter}vw;" class="box"></div>
-
-			`
-document.getElementById("wrapper").appendChild(container);
-}
 </script>
 </body>
 </html>

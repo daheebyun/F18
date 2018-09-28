@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<style type="text/css">
+	
+	html,body{
+		padding: 0;
+		margin: 0;
+		font-size: 15px;
+		text-align: center;
+	}
+	.weather{
+		font-size: 20px;
+	}
+	.container{
+
+		position: relative;
+		display: inline-block;
+		width: 5vw;
+		height: 5vw;
+
+	}
+	#wrapper{
+		width:100%;
+	}
+</style>
+</head>
+<body>
+
+<div id="wrapper"></div>
+
+<script type="text/javascript">
+
+var interval = 0, 
+	counter = 0;
+
+
+for(var i = 0; i < 100; i ++){
+	setTimeout(function(){
+
+	var weather = document.createElement("div");
+	weather.className = "weather";
+
+
+	var car = ""; //this empty strhing will be filled below;
+
+
+	for(var s = 0; s < 1; s ++){
+	//we want to compile the snow w/ rain string
+
+	var cAr = (Math.random()*10);
+
+	if (cAr <= 1) {
+ 		car += "🏎️";
+
+ 	}else if (cAr > 2 && cAr <= 3){
+ 		car += "🏎";
+ 	}else if(cAr > 3 && cAr <= 4){
+ 		car +="🚚";
+ 	}
+ 	else if (cAr > 4 && cAr <= 5){
+ 		car +="🚓"
+ 	}else if (cAr > 6){
+ 		car += "🚛";
+ 	}
+ }
+	
+	weather.innerHTML = car;
+
+	document.getElementById("wrapper").appendChild(weather);
+
+	window.scrollTo(0, document.body.scrollHeight);
+
+	counter++; 
+
+	}, interval);
+
+	interval += 100;
+	//with each setTimeout, the start from 0 is increased by 100 = 0.1 second
+}
+
+var totalLength = 260; 
+
+for(var i = 0; i < totalLength; i++){
+	var container = document.createElement("div");
+	container.className = "container";
+
+	document.getElementById("wrapper").appendChild(container)
+
+}
+
+
+</script>
+
+</body>
+</html>

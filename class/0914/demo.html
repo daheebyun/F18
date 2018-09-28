@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<style type="text/css">
+		
+	html{
+		/*background-color: #800000;*/
+		background-color: #ffffff;
+	}
+	
+	html, body, div{
+
+		margin: 0;
+		padding: 0;
+		font-size:0;
+	}
+
+	.container{
+
+		position: relative;
+		display: inline-block;
+		width: 11.11vw;
+		height: 11.11vw;
+
+	}	
+
+	#wrapper{
+		width:100%;
+	}
+
+	.circle{
+
+		position:absolute;
+/*		background-color: #0ABAB5;*/
+		border-radius: 50%;
+		/*center circle*/
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+	}
+
+	</style>
+</head>
+<body>
+
+	<div id="wrapper"></div>
+
+
+<!-- 		//1번째 방법
+		for(var i = 0; i < 100; i++){
+
+			var container = document.createElement("div");
+			container.className = "container";
+
+			
+			var circleDiameter = 2;
+
+			container.innerHTML = `
+
+				<div style="width:${circleDiameter}vw; height:${circleDiameter}vw;" class="circle"></div>
+
+			`
+
+			document.getElementById("wrapper").appendChild(container)
+		} -->
+
+
+<!-- 
+
+
+		두번째방법
+		var circleDiameter = 2;
+
+		for(var i = 0; i < 100; i++){
+
+			var container = document.createElement("div");
+			container.className = "container";
+
+			circleDiameter++;
+
+			if(circleDiameter == 10){
+				circleDiameter = 0;
+			}
+
+			container.innerHTML = `
+
+				<div style="width:${circleDiameter}vw; height:${circleDiameter}vw;" class="circle"></div>
+
+			`
+
+			document.getElementById("wrapper").appendChild(container)
+		} -->
+
+
+
+
+	<script type="text/javascript">	
+
+	//external variable that starts independent of the for loop 
+	var circleDiameter = 0;
+	var direction = false;
+	var totalLength = 100;
+
+		for(var i = 0; i < totalLength; i++){
+
+			//creating element
+			var container = document.createElement("div");
+			container.className = "container";
+
+			
+
+			//two different ways to reset the diameter of the circle
+			//if(circleDiameter == 10){
+			// 	circleDiameter = 0;
+			// }
+
+
+			//this decides the direction (if true, then count up, if false, count down)
+			if( i % 5 == 0){ //every five times (i.e. only when i is divisible by 5)
+				if(direction){
+					//if direction is true, change it to false
+					direction = false;
+				}else{
+					//if direction is false, change it to true
+					direction = true;
+					circleDiameter = 1;
+				}
+
+			}
+
+			//check the direction so that we know whether to count up or down:
+			//incrementing the diameter
+			if(!direction){ // if not direction (if direction is false)
+				//if direction = false;
+				circleDiameter--;
+			}else{
+				//if direction = true;
+				circleDiameter++;
+				// circleDiameter = circleDiameter + 1;
+			}
+
+			//percentage of progress through array
+			var progress = i/(totalLength - 1);
+			var red = 255 - (progress * 255);
+			var blue = progress * 255; 
+
+			//rgb(255,0,255)
+			var color = "rgb(" + red + ", 0, " + blue + ")";
+
+			//rgb (255, 255, 255) blue 
+			//rgb (255, 0, 0)
+
+
+			//percentage for opacity
+			var percentage = circleDiameter / 5;
+
+			//template literal with diameter injected as inline css
+			container.innerHTML = `
+
+				<div style="background-color:${color}; opacity:${percentage}; width:${circleDiameter}vw; height:${circleDiameter}vw;" class="circle"></div>
+
+			`
+
+			document.getElementById("wrapper").appendChild(container)
+		} 	
+	</script>
+</body>
+</html>

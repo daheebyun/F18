@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<style type="text/css">
+	
+	html,body{
+		padding: 0;
+		margin: 0;
+		font-size: 15px;
+		text-align: center;
+	}
+	.weather{
+		font-size: 20px;
+	}
+</style>
+</head>
+<body>
+
+<div id="wrapper"></div>
+
+<script type="text/javascript">
+
+var interval = 0, 
+	counter = 0;
+//counter : for loop run 100 times before setTimeout starts
+
+/*
+	you can think about it htis way: 
+
+	the for loop prepares each setTimeout. 
+
+	the setTimeouts only run once the for loop is finished, meaning that even with the first setTimeout, `i` will already equal 100
+
+	so, we use the counter to increase by one when the setTimeout actually runs. 
+
+	//이미 for loop은 준비가 돼있는데 밑에 counter++;가 interval +=100, 즉 0.1초 전까지는 준비가 돼있어도 시작하지 말라는 명령언
+
+
+*/
+
+for(var i = 0; i < 100; i ++){
+	setTimeout(function(){
+
+	var weather = document.createElement("div");
+	weather.className = "weather";
+
+
+	var snow = ""; //this empty strhing will be filled below;
+
+
+	for(var s = 0; s < 10; s ++){
+	//we want to compile the snow w/ rain string
+
+	var snowOrRain = (Math.random()*100);
+
+	if (snowOrRain <= 33) {
+ 		snow += " ";
+
+ 	}else if (snowOrRain > 33 && snowOrRain <= 66){
+ 		snow += "❄️";
+
+ 	}else if (snowOrRain > 66){
+ 		snow += "💧";
+ 	}
+ }
+	
+	weather.innerHTML = snow;
+
+	document.getElementById("wrapper").appendChild(weather);
+
+	window.scrollTo(0, document.body.scrollHeight);
+
+	counter++; 
+
+	}, interval);
+
+	interval += 100;
+	//with each setTimeout, the start from 0 is increased by 100 = 0.1 second
+}
+
+
+
+</script>
+
+</body>
+</html>
