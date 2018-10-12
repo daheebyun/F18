@@ -1,0 +1,181 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<style type="text/css">
+ 	html, body, div{
+ 		margin: 0;
+ 		padding: 0;
+ 		background-color: #78a55f;
+ 		width: 100%;
+ 		height: 100%;
+ 		font-size: 15px;
+		text-align: center;
+ 	}
+ 	.row{
+		background-color: #78a55f;
+		width: 100%;
+		height:30%;
+		display: block;
+	}
+	.row2{
+		background-color: #78a55f;
+		width: 100%;
+		height:30%;
+		display: inline-block;
+		margin:0;
+	}
+	.row3{
+		background-color: #78a55f;
+		width: 100%;
+		height:30%;
+		display: block;
+	}
+	.row2 > div {
+  		background-color: #c7d9bc;
+  		width: 40vw;
+  		height: 0.2vw;
+  		display: inline-grid;
+	}
+	.container{
+
+		position: relative;
+		display: inline-block;
+		width: 5vw;
+		height: 5vw;
+
+	}
+	#wrapper{
+		width:100%;
+	}
+	.seed{
+		font-size: 20px;
+		position: absolute;
+		display: inline-block;
+		transition: 0.2s;
+		width: 2.5vw;
+		height: 3.5vw;
+		cursor: pointer;
+		left: 100px;
+		top:200px;
+		text-align: left;
+	}
+	.click{
+		opacity: 0;
+	}
+	.size{
+		font-size: 15px;
+	}
+	.color{
+		color: yellow;
+	}
+</style>
+</head>
+
+<body>
+	<div id="wrapper">
+		<div class="row">
+			<div></div>
+		</div>
+		<div class="row2">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+		<div class="row3">
+			<div></div>
+		</div>
+	</div>
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script>
+var circleDiameter = 1.5;
+var totalLength = 0; 
+var seedLength = 7200;
+var interval = 0, counter = 0;
+
+for(var i = 0; i < totalLength; i++){
+	var row = document.createElement("row");
+	row.className = "row";
+
+document.getElementById("wrapper").appendChild(container)
+}
+
+for(var i = 0; i < totalLength; i++){
+	var row2 = document.createElement("row2");
+	row2.className = "row2";
+
+document.getElementById("wrapper").appendChild(container)
+}
+
+
+for(var j = 0; j < 45; j ++){
+	setTimeout(function(){
+
+	// var seed = document.createElement("div");
+	var seed = $("<div/>");
+	//seed.className = "seed";
+	$(seed).addClass("seed");
+
+	var dot = ""; 
+
+
+	for(var s = 0; s < 1; s ++){
+
+	var dOt = (Math.random()*100);
+
+	if (dOt <= 10) {
+ 		dot += "●";
+
+ 	}else if (dOt > 20 && dOt <= 30){
+ 		dot += "⚫️";
+ 	}else if(dOt > 30 && dOt <= 40){
+ 		dot +="●";
+ 	}
+ 	else if (dOt > 40 && dOt <= 50){
+ 		dot +="•"
+ 	}else if (dOt > 90){
+ 		dot += "∙";
+ 	}
+ }
+	
+	//seed.innerHTML = dot;
+	$(seed).text(dot);
+
+	// document.getElementById("wrapper").appendChild(seed);
+	$(".row2").append(seed);
+	var degrees = $('.seed').length * 4;
+	$(seed).css('transform', 'rotate('+ degrees + 'deg)');
+	$(".seed").click(function(){
+		//randomly choose which class to toggle
+		var randomNumbr = Math.floor(Math.random() * 3) + 1 
+
+		if(randomNumbr == 1){
+			$(this).toggleClass("click");
+		}
+		else if(randomNumbr == 2){
+			$(this).toggleClass("color");
+		}else{
+			$(this).toggleClass("size");
+		}
+
+	})
+	//getting element need to be in ""
+	window.scrollTo(0, document.body.scrollHeight);
+
+	counter++; 
+
+	}, interval);
+
+	interval += 10;
+}
+
+</script>
+</body>
+</html>
