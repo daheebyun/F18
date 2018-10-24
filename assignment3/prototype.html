@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body, html{
+			width: 100vw;
+			height: 100vh;
+			background-color: #f6f6f6;
+		}
+img{
+	position: absolute;
+}
+</style>
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+</head>
+<body>
+<img src='eye.jpg'>
+
+<script type="text/javascript">
+
+	if (Cookies.getJSON('eye')) {
+
+			eyeSize = Cookies.getJSON('eye');
+			Cookies.set('eye',eyeSize * 1.5);
+		}else{
+			Cookies.set('eye', 600);
+		}
+		$('img').css('width',Cookies.get('eye'));
+		$('img').css('left',$(window).width()/2 - $('img').width()/2)
+		$('img').css('top',$(window).height()/2 - $('img').height()/2)
+</script>
+</body>
+</html>
