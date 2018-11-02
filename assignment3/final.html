@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body, html{
+			margin: 0;
+			padding:0;
+			width: 100vw;
+			height: 100vh;
+			background-color: #f6f6f6;
+		} 
+img{
+	position: absolute;
+	z-index: 1;
+} 
+canvas{
+	position: relative;
+	z-index: 20;
+} 
+</style>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+
+
+
+</head>
+<body>
+<img src='eye.jpg'>
+<canvas id="canvas"></canvas>
+
+<script type="text/javascript">
+var canvas = document.getElementById("canvas");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+var context = canvas.getContext("2d");
+
+var x = window.innerWidth/2;
+var y = window.innerHeight; 
+context.moveTo(x,y);
+
+var step = 20;
+
+function loop(){
+	x = x + (Math.random()-0.5)*step; 
+	y = y + (Math.random()-0.5)*step; 
+	if (x > window.innerWidth){
+		x = window.innerWidth; 
+	} 
+	if (y > window.innerHeight){
+		y = window.innerHeight;
+	} 
+	if(x<0){x = 0;} 
+	if(y<0){y = 0;} 
+
+	context.lineTo(x,y);
+	context.stroke();
+} 
+
+setInterval(loop, 1000/300);
+
+Cookies.set('canvas');
+
+	$(document).ready(function(){
+	if (Cookies.getJSON('eye')) {
+			eyeSize = Cookies.getJSON('eye');
+                if(eyeSize < 3200){
+                        $('img').css('width',Cookies.get('eye')); 
+			Cookies.set('eye',eyeSize * 1.5); 
+                   } else {
+                      Cookies.remove('eye')
+                      $('img').attr('src', 'eye2.jpg')
+                   } 
+		}else{
+			Cookies.set('eye', 600);
+		} 
+
+		$('img').css('width',Cookies.get('eye'));
+		$('img').css('left',$(window).width()/2 - $('img').
+			width()/2)
+		$('img').css('top',$(window).height()/2 - $('img').height()/2)
+
+	
+	 //Cookies.remove('eye')
+	 });
+</script>
+</body>
+</html>
