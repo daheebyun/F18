@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+	html, body, div{
+ 		margin: 0;
+ 		padding: 0;
+ 		background-color: red;
+ 		width: 100%;
+ 		height: 100%;
+ 		font-size: 15px;
+		text-align: center;
+		overflow: hidden;
+ 	}
+	#temrec{
+		position: absolute;
+		width: 1px;
+		height: 500px;
+		background-color: black;
+		top: 24.25vw;
+		bottom: 0;
+		left: 0.7vw;
+		right: 0;
+		margin-top: auto;
+		margin-bottom: auto;
+		margin-left: auto;
+		margin-right: auto;
+		transition: transform 2s;
+		animation: grow 1.5s infinite;
+	}
+	#temrec2{
+		position: absolute;
+		width: 2px;
+		height: 500px;
+		background-color: black;
+		top: 18.25vw;
+		bottom: 0;
+		left: 8.7vw;
+		right: 0;
+		margin-top: auto;
+		margin-bottom: auto;
+		margin-left: auto;
+		margin-right: auto;
+		transition: transform 2s;
+		animation: grow 1.5s infinite;
+
+	}
+	#temrec3{
+		position: absolute;
+		width: 3px;
+		height: 500px;
+		background-color: black;
+		top: 24.25vw;
+		bottom: 0;
+		left: 15.7vw;
+		right: 0;
+		margin-top: auto;
+		margin-bottom: auto;
+		margin-left: auto;
+		margin-right: auto;
+		transition: transform 2s;
+		animation: grow 1.5s infinite;
+
+	}
+	#temrec4{
+		position: absolute;
+		width: 2px;
+		height: 500px;
+		background-color: black;
+		top: 24.25vw;
+		bottom: 0;
+		left: 25.7vw;
+		right: 0;
+		margin-top: auto;
+		margin-bottom: auto;
+		margin-left: auto;
+		margin-right: auto;
+		transition: transform 2s;
+		animation: grow 1.5s infinite;
+
+	}
+	#temrec5{
+		position: relative;
+		width: 3px;
+		height: 500px;
+		background-color: black;
+		top: 24.25vw;
+		bottom: 0;
+		left: 30.7vw;
+		right: 0;
+		margin-top: auto;
+		margin-bottom: auto;
+		margin-left: auto;
+		margin-right: auto;
+		transition: transform 2s;
+		animation: grow 1.5s infinite;
+
+	}
+	#temrec6{
+		position: absolute;
+		width: 1px;
+		height: 500px;
+		background-color: black;
+		top: 24.25vw;
+		bottom: 0;
+		left: 40.7vw;
+		right: 0;
+		margin-top: auto;
+		margin-bottom: auto;
+		margin-left: auto;
+		margin-right: auto;
+		transition: transform 2s;
+		animation: grow 1.5s infinite;
+
+	}
+	#temrec7{
+		position: absolute;
+		width: 3px;
+		height: 500px;
+		background-color: black;
+		top: 24.25vw;
+		bottom: 0;
+		left: 47.7vw;
+		right: 0;
+		margin-top: auto;
+		margin-bottom: auto;
+		margin-left: auto;
+		margin-right: auto;
+		transition: transform 2s;
+		animation: grow 1.5s infinite;
+
+	}
+	#temrec8{
+		position: absolute;
+		width: 3px;
+		height: 500px;
+		background-color: black;
+		top: 24.25vw;
+		bottom: 0;
+		left: 30.7vw;
+		right: 0;
+		margin-top: auto;
+		margin-bottom: auto;
+		margin-left: auto;
+		margin-right: auto;
+		transition: transform 2s;
+		animation: grow 1.5s infinite;
+
+	}
+	#temrec9{
+		position: absolute;
+		width: 3px;
+		height: 500px;
+		background-color: black;
+		top: 24.25vw;
+		bottom: 0;
+		left: 30.7vw;
+		right: 0;
+		margin-top: auto;
+		margin-bottom: auto;
+		margin-left: auto;
+		margin-right: auto;
+		transition: transform 2s;
+		animation: grow 1.5s infinite;
+
+	}
+	#temrec10{
+		position: absolute;
+		width: 3px;
+		height: 500px;
+		background-color: #000;
+		top: 24.25vw;
+		bottom: 0;
+		left: 10.7vw;
+		right: 0;
+		margin-top: auto;
+		margin-bottom: auto;
+		margin-left: auto;
+		margin-right: auto;
+		animation: grow 1.5s infinite;
+
+	}
+	#temrec11{
+		position: absolute;
+		width: 3px;
+		height: 500px;
+		background-color: #000;
+		top: 10.25vw;
+		bottom: 0;
+		left: 100.7vw;
+		right: 0;
+		margin-top: auto;
+		margin-bottom: auto;
+		margin-left: auto;
+		margin-right: auto;
+		animation: grow 1.5s infinite;
+
+	}
+
+	@keyframes grow {
+	0% {
+		width: 2px;
+		height: 50px;
+	}
+	
+	50% {
+		width: 3px;
+		height: 300px;
+	}
+	0% {
+		width: 1px;
+		height: 50px;
+	}
+}
+	* {
+	    box-sizing: border-box;
+	}
+	.one {
+		width: 50%;
+	    height: 50%;
+	    float: left;
+	    background-color: yellow;
+  		justify-content: center;
+	}
+
+	.two {
+		width: 50%;
+	    height: 50%;
+	    float: left;
+	    background-color: lightblue;
+	}
+
+	.three {
+		width: 50%;
+	    height: 50%;
+	    float: left;
+	    background-color: #043687;
+	    transition: background-color 5s ease-in-out;
+	}
+	.four {
+		width: 50%;
+	    height: 50%;
+	    float: left;
+	    background-color:  #fff;
+	    transition: background-color 4s ease-in-out;
+	}
+	#tal1{
+		position: fixed;
+		width: 20vw;
+	    height: 27vh;
+	    left: 47vw;
+	    bottom: 48vw;
+	    position: absolute;
+  		/*animation: mymove 1s infinite;
+  		animation-iteration-count:infinite;*/
+	}
+/*	@-webkit-keyframes mymove {
+  	from {top: 0px;}
+  	to {bottom: : 1000px;}
+	}
+
+	@keyframes mymove {
+  	from {top: 0px;}
+  	to {bottom: : 1000px;}
+	}*/
+	#tal2{
+		width: 16vw;
+	    height: 22vh;
+	    left: 84vw;
+	    bottom: 55vh;
+	    position: absolute;
+	}
+	#tal3_1{
+	    position: fixed;
+		z-index: 3;
+		animation-iteration-count:infinite;
+	}
+	#tal3_2{
+		position: absolute;
+	    z-index: 2;
+	}
+	#tal3_2{
+	 	z-index: 1;
+	}
+	#pattern{
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin-top: auto;
+		margin-bottom: auto;
+		margin-left: auto;
+		margin-right: auto;
+		transition: transform 5s;
+		animation-delay: 5s;
+		animation: rotation 10s linear;
+		animation-iteration-count: infinite;
+	}
+		
+	@-webkit-keyframes rotation {
+		from {
+				-webkit-transform: rotate(0deg);
+		}
+		to {
+				-webkit-transform: rotate(360deg);
+		}
+
+	</style>
+
+	<script type="text/javascript" src="assets/jquery-3.3.1.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+	    $.get( "http://api.openweathermap.org/data/2.5/weather?id=1835848&units=metric&APPID=c4f798f5b2dbc54b7d97147783e2d7ad", function(data) {
+
+	    	var name = data.name;
+	     	$("#S").css({"width" : tem + "vh"})
+
+	     	var tem = data.main.temp;
+	     	$("#temrec2").animate({"top" : tem + "px"})
+	     	$("#temrec3").animate({"bottom" : tem + "px"})
+	     	$("#temrec4").animate({"top" : tem + "px"})
+	     	$("#temrec5").animate({"top" : tem + "px"})
+	     	$("#temrec6").animate({"bottom" : tem + "px"})
+	     	$("#temrec7").animate({"top" : tem + "px"})
+	     	$("#temrec8").animate({"bottom" : tem + "px"})
+	     	$("#temrec9").animate({"top" : tem + "px"})
+	     	$("#temrec10").animate({"bottom" : tem + "px"})
+	     	$("#temrec11").animate({"bottom" : tem + "px"})
+
+	     	console.log(tem);
+	     	var tempmax = data.main.temp_max;
+	     	var tempmin = data.main.temp_min;
+	     	console.log(tempmax)
+	     	$("#tal2").fadeIn("slow",function(){
+  			$(this).animate({"top": tempmax + "px"},3000);
+			});
+	     	var tempmin = data.main.temp_min;
+	     	console.log(tempmin)
+	     	$("#tal1").fadeIn("slow",function(){
+  			$(this).animate({"bottom": tempmin + "px"},4000);
+			});
+
+
+	     	var weather = data.weather[0].main;
+	     	console.log(weather)
+	     	if(weather == "Clear"){
+	     		$( "#tal3_1" ).animate({opacity: 0}, 6000, function() {});
+	     		$( "#tal3_3" ).animate({opacity: 0}, 6000, function() {});
+	     		$(".three").css({"background-color" : "#ffbf00"})
+	     	}else if(weather == "Rainy"){
+	     		$( "#tal3_1" ).animate({opacity: 0}, 6000, function() {});
+	     		$( "#tal3_2" ).animate({opacity: 0}, 6000, function() {});
+	     		$(".three").css({"background-color" : "#000000"})
+
+	     	} 
+	     	var wspeed = data.wind.speed;
+
+	     	console.log(wspeed)
+
+	     	if(wspeed <= 1){
+	     		$(".four").css({"background-color" : "#ffcece"});
+
+	     	}else if(1 < wspeed <= 2){
+	     		$(".four").css({"background-color" : "#FD6F6F"});
+	     	}
+	     	else if(2 < wspeed <= 3){
+	     		$(".four").css({"background-color": "##d64040"});
+	     	}
+	     	else if(3 < wspeed <= 4){
+	     		$(".four").css({"background-color" : "#A22626"});
+	     	}
+	     	
+	     	var wdeg = data.wind.deg;
+	     	console.log(wdeg)
+	     	$("#pattern").css({"transform" : "rotate(" + wdeg + "deg)"})
+
+	     	// var s = data.name; 
+	     	// $(".four").text(s);
+	    });
+		})
+	</script>
+
+</head>
+<body>
+	<div class="one">
+		<img id="pattern" src="pattern.png">
+	</div>
+	<div class="two">
+		<div id="temrec"></div>
+		<div id="temrec2"></div>
+		<div id="temrec3"></div>
+		<div id="temrec4"></div>
+		<div id="temrec5"></div>
+		<div id="temrec6"></div>
+		<div id="temrec7"></div>
+		<div id="temrec8"></div>
+		<div id="temrec9"></div>
+		<div id="temrec10"></div>
+		<img id= "tal1" src="1.png">
+		<img id= "tal2" src="2.png">
+	</div>
+	<div class="three">
+		<img id="tal3_1" src="4.png">
+		<img id="tal3_2" src="4_1.png">
+		<img id="tal3_3" src="4_2.png">
+	</div>
+	<div class="four"></div>
+
+</body>
+</html>
